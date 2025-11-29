@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00CF72D5-4071-4892-B842-C6124B30357E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MapEngine</RootNamespace>
+    <AssemblyName>MapEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Interface\IPlayers.cs" />
+    <Compile Include="Core\Models\Cell.cs" />
+    <Compile Include="Core\Models\CellData.cs" />
+    <Compile Include="Core\GameMechanics\CreatePlayer.cs" />
+    <Compile Include="Core\GameMechanics\Dice.cs" />
+    <Compile Include="Core\Factory\EngineFactory.cs" />
+    <Compile Include="Core\Factory\GameFactoryData.cs" />
+    <Compile Include="Core\GameMechanics\GameLogic.cs" />
+    <Compile Include="Core\Models\Players.cs" />
+    <Compile Include="Display\Interface\IRefreshCellContent.cs" />
+    <Compile Include="Display\Interface\IRenderCellContents.cs" />
+    <Compile Include="Display\ItemRender.cs" />
+    <Compile Include="Display\MovementAnimation.cs" />
+    <Compile Include="Display\RefreshCellContent.cs" />
+    <Compile Include="Display\RenderСellСontents.cs" />
+    <Compile Include="Display\SceneRenderFactory.cs" />
+    <Compile Include="Core\Interface\ICell.cs" />
+    <Compile Include="Core\Interface\ICellSearch.cs" />
+    <Compile Include="Core\Interface\IDice.cs" />
+    <Compile Include="Core\Factory\IGameFactoryData.cs" />
+    <Compile Include="Core\Interface\IGameLogic.cs" />
+    <Compile Include="Core\Factory\IMap.cs" />
+    <Compile Include="Core\Interface\ICells.cs" />
+    <Compile Include="Display\Interface\IMapRender.cs" />
+    <Compile Include="Display\Interface\IMovementAnimator.cs" />
+    <Compile Include="Parser\IParser.cs" />
+    <Compile Include="Core\Interface\IPlayer.cs" />
+    <Compile Include="Core\Models\Items.cs" />
+    <Compile Include="Core\Interface\ICreatePlayer.cs" />
+    <Compile Include="Services\Interface\IPositionCalculator.cs" />
+    <Compile Include="Display\Interface\IRenderItem.cs" />
+    <Compile Include="Core\Interface\IProcessTurn.cs" />
+    <Compile Include="Services\Interface\IPositionService .cs" />
+    <Compile Include="Display\Interface\ISceneRenderFactory.cs" />
+    <Compile Include="Services\CellSearch.cs" />
+    <Compile Include="Services\PositionService.cs" />
+    <Compile Include="Parser\MapBuilder.cs" />
+    <Compile Include="Parser\ParseNameCell.cs" />
+    <Compile Include="Parser\ParseMap.cs" />
+    <Compile Include="Core\Models\Player.cs" />
+    <Compile Include="Services\PositionCalculator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Display\MapRender.cs" />
+    <Compile Include="Core\GameMechanics\ProcessTurn.cs" />
+    <Compile Include="Core\Models\Сhip.cs" />
+    <Compile Include="Utils\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="READMI.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
